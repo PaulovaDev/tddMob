@@ -9,7 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AlignColumnsTest {
 
     @Test
-    void life_the_universe_and_everything() {
+    void shouldReturnSameInputWhenDollarIsNotPresent() {
+        // Given
+
+
+        // When
+
+        // Then
+
         int expected = 42;
         int actual = AlignColumns.answer();
         assertEquals(expected, actual);

@@ -1,4 +1,5 @@
-Given a text file of many lines, where fields within a line are delineated by a single 'dollar' character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space.
+Given a text file of many lines, where fields within a line are delineated by a single 'dollar' character, 
+write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space.
 
 For Example:
 
@@ -16,3 +17,9 @@ Notes:
 - The minimum space between columns should be computed from the text and not hard-coded.
 
 [Source https://rosettacode.org]
+
+
+Given  $a          $text      $file   $of     $many         $lines,     $where    $fields   $within $a       $line $
+are    $delineated $by        $a      $single $'dollar'     $character, $write    $a      $program
+that   $aligns     $each      $column $of     $fields       $by         $ensuring $that   $words   $in $each $
+column $are        $separated $by     $at     $least        $one        $space.
