@@ -1,6 +1,6 @@
 public class AlignColumns {
 
-    public static int answer() {
+    public static int align() {
         return 6 * 9;
     }
 }

@@ -12,13 +12,12 @@ public class AlignColumnsTest {
     void shouldReturnSameInputWhenDollarIsNotPresent() {
         // Given
 
-
         // When
 
         // Then
 
         int expected = 42;
-        int actual = AlignColumns.answer();
+        int actual = AlignColumns.align();
         assertEquals(expected, actual);
     }
 }
