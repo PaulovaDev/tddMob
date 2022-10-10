@@ -11,7 +11,7 @@ public class AlignColumnsTest {
     @Test
     void shouldReturnSameInputWhenDollarIsNotPresent() {
         // Given
-        var input = "Unacadenacambiada";
+        var input = "Unacadenacambiada2";
 
         // When
         int actual = AlignColumns.align();
