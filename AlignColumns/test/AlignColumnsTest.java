@@ -34,4 +34,19 @@ public class AlignColumnsTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldReturn2SeparatedWordsWhenDollarIsPresentInBetweenWitBreakLine() {
+        // Given
+        var input = "Cadena$cambiada \n Cadena$cambiada";
+        var expected = "Cadena cambiada \n Cadena cambiada";
+
+        // When
+        var actual = AlignColumns.align(input);
+
+        // Then
+        assertEquals(expected, actual);
+    }
+
+
+
 }
