@@ -11,13 +11,13 @@ public class AlignColumnsTest {
     @Test
     void shouldReturnSameInputWhenDollarIsNotPresent() {
         // Given
-        var input = "Unacadenacambiada2";
+        var input = "Unacadenacambiada";
+        var expected = "Unacadenacambiada";
 
         // When
-        int actual = AlignColumns.align();
+        var actual = AlignColumns.align(input);
 
         // Then
-        var expected = "Unacadenacambiada";
         assertEquals(expected, actual);
     }
 }

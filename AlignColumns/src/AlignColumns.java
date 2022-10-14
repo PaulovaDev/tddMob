@@ -1,6 +1,6 @@
 public class AlignColumns {
 
-    public static int align() {
-        return 6 * 9;
+    public static String align(String text) {
+        return text;
     }
 }
