@@ -20,4 +20,18 @@ public class AlignColumnsTest {
         // Then
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldReturn2SeparatedWordsWhenDollarIsPresentInBetween() {
+        // Given
+        var input = "Cadena$cambiada";
+        var expected = "Cadena cambiada";
+
+        // When
+        var actual = AlignColumns.align(input);
+
+        // Then
+        assertEquals(expected, actual);
+    }
+
 }
