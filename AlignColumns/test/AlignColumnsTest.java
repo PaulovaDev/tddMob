@@ -47,6 +47,19 @@ public class AlignColumnsTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void shouldReturnOneDollarSignWhenThereAreTwoDollarsContiguous() {
+        // Given
+        var input = "Cuesta$20$$todo";
+        var expected = "Cuesta 20$ todo";
+
+        // When
+        var actual = AlignColumns.align(input);
+
+        // Then
+        assertEquals(expected, actual);
+    }
+
 
 
 }
