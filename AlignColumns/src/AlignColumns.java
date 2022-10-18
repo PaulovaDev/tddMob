@@ -1,3 +1,5 @@
+import org.junit.platform.console.shadow.picocli.CommandLine.Help.Ansi.Text;
+
 public class AlignColumns {
 
     public static String replaceDollarBySpace (String text) { 
@@ -5,6 +7,10 @@ public class AlignColumns {
         return result.replace("  ", "$ ");
     }
 
-}
+    public static String align(String text) {
+        String textReplaced = replaceDollarBySpace(text);
+        String[] allLines = textReplaced.split("\n");
 
-//[Cuesta$20, todo]
+        return "a";
+    }
+}

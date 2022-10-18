@@ -24,7 +24,7 @@ public class AlignColumnsTest {
     }
 
     @Test
-    void shouldReturn2SeparatedWordsWhenDollarIsPresentInBetween() {
+    void shouldReturnTwoSeparatedWordsWhenDollarIsPresentInBetween() {
         // Given
         var input = "Cadena$cambiada";
         var expected = "Cadena cambiada";
@@ -37,10 +37,23 @@ public class AlignColumnsTest {
     }
 
     @Test
-    void shouldReturn2SeparatedWordsWhenDollarIsPresentInBetweenWitBreakLine() {
+    void shouldReturnFiveSeparatedWordsWhenDollarIsPresentInBetween() {
         // Given
-        var input = "Cadena$cambiada \n Cadena$cambiada";
-        var expected = "Cadena cambiada \n Cadena cambiada";
+        var input = "Soy$una$cadena$de$cinco$palabras";
+        var expected = "Soy una cadena de cinco palabras";
+
+        // When
+        var actual = AlignColumns.replaceDollarBySpace(input);
+
+        // Then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldReturnTwoPhrasesAlignedByColumnsWhenThereIsABreakLine() {
+        // Given
+        var input = "Cadena$cambiada\nSoy$cadena";
+        var expected = "Cadena cambiada\nSoy    cadena";
 
         // When
         var actual = AlignColumns.replaceDollarBySpace(input);
