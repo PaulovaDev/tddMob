@@ -2,8 +2,10 @@
 // JUnit assertion - the default Java assertion library
 // https://junit.org/junit5/
 
-import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class AlignColumnsTest {
@@ -15,7 +17,7 @@ public class AlignColumnsTest {
         var expected = "Unacadenacambiada";
 
         // When
-        var actual = AlignColumns.align(input);
+        var actual = AlignColumns.replaceDollarBySpace(input);
 
         // Then
         assertEquals(expected, actual);
@@ -28,7 +30,7 @@ public class AlignColumnsTest {
         var expected = "Cadena cambiada";
 
         // When
-        var actual = AlignColumns.align(input);
+        var actual = AlignColumns.replaceDollarBySpace(input);
 
         // Then
         assertEquals(expected, actual);
@@ -41,7 +43,7 @@ public class AlignColumnsTest {
         var expected = "Cadena cambiada \n Cadena cambiada";
 
         // When
-        var actual = AlignColumns.align(input);
+        var actual = AlignColumns.replaceDollarBySpace(input);
 
         // Then
         assertEquals(expected, actual);
@@ -54,7 +56,7 @@ public class AlignColumnsTest {
         var expected = "Cuesta 20$ todo";
 
         // When
-        var actual = AlignColumns.align(input);
+        var actual = AlignColumns.replaceDollarBySpace(input);
 
         // Then
         assertEquals(expected, actual);
