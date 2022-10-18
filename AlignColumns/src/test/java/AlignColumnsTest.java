@@ -2,10 +2,19 @@
 // JUnit assertion - the default Java assertion library
 // https://junit.org/junit5/
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class AlignColumnsTest {
@@ -56,10 +65,27 @@ public class AlignColumnsTest {
         var expected = "Cadena cambiada\nSoy    cadena";
 
         // When
-        var actual = AlignColumns.replaceDollarBySpace(input);
+        var actual = AlignColumns.align(input);
 
         // Then
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldReturnWordMatrixWithForAllTheLines() {
+        // Given
+        var input = "Cadena cambiada\nSoy cadena";
+        List<String[]> expected = Arrays.asList(new String[]{"Cadena", "cambiada"}, new String[]{"Soy","cadena"});
+
+        // When
+        var actual = AlignColumns.createWordMatrix(input);
+
+        // Then
+        Assertions.assertAll(
+                IntStream.range(0, actual.size())
+                        .mapToObj(i -> () -> Assertions.assertArrayEquals(expected.get(i),
+                                actual.get(i)))
+        );
     }
 
     @Test
